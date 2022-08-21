@@ -27,9 +27,11 @@ module.exports = {
       },
       borderRadius: {
         'large': '110px',
-      }
+      },
+      lineHeight: {
+        'extra-loose': '2.5',
+      },
 
     }
   },
-  plugins: [],
 }

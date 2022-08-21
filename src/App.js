@@ -1,10 +1,14 @@
 import './App.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Provider } from './component/context/ContextProvider';
 import Home from './component/Home';
 import Pages from './component/Pages';
 import Header from './component/Header';
-import HomeItem from './component/HomeItem';
+import HomeItem from './component/HomeInfo';
+import ChooseCity from './component/ChooseCity';
+import HomeDetail from './component/HomeDetail';
+
 
 function App() {
   return (
@@ -14,7 +18,8 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/homeInfo/:id' element={<HomeItem />} />
+            <Route path='/' element={<ChooseCity />} />
+            <Route path='/homedetail/:id' element={<HomeDetail />} />
           </Routes>
         </Router>
       </Provider>

@@ -2,16 +2,17 @@ import { useState, useEffect, useContext } from "react";
 
 import CategoryBanner from "./CategoryBanner";
 import ContextProvider from "./context/ContextProvider";
-import HomeItem from "./HomeItem";
+import HomeItem from "./HomeInfo";
 import Loading from "./Loading";
+import HomeListing from "./HomeListing";
 
 const Home = () => {
   let [pageCount, setPageCount] = useState(1);
-  const { getData, home, loading } = useContext(ContextProvider);
+  const { getData, home, loading, city, setCity } = useContext(ContextProvider);
 
   useEffect(() => {
-    getData(pageCount);
-  }, [pageCount]);
+    getData(city, pageCount);
+  }, [pageCount, city]);
 
   const nextPage = () => {
     setPageCount(pageCount + 1);
@@ -29,15 +30,7 @@ const Home = () => {
       {!loading && <CategoryBanner />}
 
       <div className="flex flex-col items-center justify-center">
-        {loading ? (
-          <Loading />
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-col-3 ">
-            {home.map((item) => {
-              return <HomeItem item={item} key={item.id} />;
-            })}
-          </div>
-        )}
+        {loading ? <Loading /> : <HomeListing />}
 
         {!loading && (
           <div className="flex items-end px-3 py-3">

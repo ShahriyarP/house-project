@@ -18,3 +18,7 @@ button {
   font-family: "yekanBakh";
   src: url("../src/asset/font/YekanBakh.ttf");
 }
+
+.modal {
+  min-width: min-content;
+}
