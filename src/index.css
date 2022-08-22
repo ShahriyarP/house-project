@@ -22,3 +22,17 @@ button {
 .modal {
   min-width: min-content;
 }
+
+#react-modal-image-img {
+  width: 50vw;
+}
+
+@media screen and (max-width: 650px) {
+  #react-modal-image-img {
+    width: 90vw;
+  }
+}
+
+a {
+  text-decoration: none;
+}
