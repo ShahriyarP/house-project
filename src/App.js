@@ -8,7 +8,7 @@ import Header from './component/Header';
 import HomeItem from './component/HomeInfo';
 import ChooseCity from './component/ChooseCity';
 import HomeDetail from './component/HomeDetail';
-
+import Footer from './component/Footer';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/' element={<ChooseCity />} />
             <Route path='/homedetail/:id' element={<HomeDetail />} />
+            <Route path='/' element={<Footer />} />
           </Routes>
         </Router>
       </Provider>

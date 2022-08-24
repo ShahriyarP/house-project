@@ -33,6 +33,10 @@ button {
   }
 }
 
+.modal-container:nth-child(1) {
+  width: 20vw;
+}
+
 a {
   text-decoration: none;
 }

@@ -6,8 +6,11 @@ import Loading from "./Loading";
 import TitleHomeDetail from "./TitleHomeDetail";
 import ShowHomeImage from "./ShowHomeImage";
 import ModalImage from "react-modal-image";
+import ImageGallery from "react-image-gallery";
+import ImgsViewer from "react-images-viewer";
 import location_black from "../asset/images/location_black.svg";
 import "../index.css";
+import Footer from "./Footer";
 
 const HomeDetail = () => {
   const {
@@ -20,36 +23,27 @@ const HomeDetail = () => {
 
   useEffect(() => {
     getInfoHome(id);
-  }, [id]);
-
-  /* return <div>{console.log(infoHome.data.seo.description)}</div>; 
-  {console.log(data.seo.thumbnail)}
-  */
-
-  /* return <ShowHomeImage source={widgets.header.thumbnail} />; */
-  /* console.log(widgets.header.thumbnail); */
-
-  /*   hideDownload={true}
-    hideZoom={true}
-    className="modal-image"
-  />; */
+  }, []);
 
   return (
-    <div className="max-w-screen-lg mx-auto my-6 ">
-      {/*  {loading && <TitleHomeDetail data={infoHome} />} */}
+    <div className="">
       {loading ? (
         <Loading />
       ) : (
         <>
-          <div className=" sm:grid sm:grid-cols-2">
+          <div className="max-w-screen-lg mx-auto my-6 sm:grid sm:grid-cols-2">
             <div className="flex items-center justify-center w-4/5">
-              <div className="w-4/5">
-                <ModalImage
-                  className="w-full shadow-md cursor-pointer rounded-xl"
-                  small={[widgets.header.thumbnail]}
-                  large={widgets.header.thumbnail}
-                  alt={data.seo.title}
-                />
+              <div className="grid items-center w-4/5 grid-cols-2 gap-3 justify-items-center ">
+                {widgets.images.map((e) => (
+                  <div className="modal-container">
+                    <ModalImage
+                      className="w-40 shadow-md cursor-pointer rounded-xl"
+                      large={e}
+                      small={e}
+                      alt={data.seo.title}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="flex flex-col px-3 py-4 text-right sm:py-0 sm:mx-4">
@@ -75,9 +69,9 @@ const HomeDetail = () => {
           </div>
 
           {/* width line */}
-          <section className="w-4/5 h-2 py-2 mx-auto shadow-xl lg:w-full rounded-2xl bg-slate-100"></section>
+          <section className="w-4/5 h-2 max-w-screen-lg py-2 mx-auto my-5 shadow-xl lg:w-full rounded-2xl bg-slate-100"></section>
           {/* width line */}
-          <div className="mx-5 my-2 sm:my-10">
+          <div className="max-w-screen-lg mx-5 mx-auto my-2 sm:my-10">
             <section className=" text-end">
               <h3 className="py-3 text-lg md:text-2xl">:توضیحات</h3>
               <p className="text-xl leading-relaxed sm:leading-extra-loose">
@@ -87,7 +81,7 @@ const HomeDetail = () => {
           </div>
 
           {/* //loacation && link divar  */}
-          <div className="grid flex-row-reverse max-w-screen-lg px-4 my-4 md:grid-cols-3 justify-items-center">
+          <div className="grid flex-row-reverse max-w-screen-lg px-4 mx-auto my-4 md:grid-cols-3 justify-items-center">
             <div className="flex items-center justify-end py-2">
               <h3>{data.city}</h3>
               <h3 className="px-1"> در </h3>
@@ -113,6 +107,7 @@ const HomeDetail = () => {
         </>
       )}
       <ToastContainer />
+      <Footer />
     </div>
   );
 };

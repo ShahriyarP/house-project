@@ -26,21 +26,18 @@ export const Provider = ({ children }) => {
   const getInfoHome = async (idpost) => {
     console.log(idpost);
     setLoading(true);
-    try {
-      const response = await fetch(
-        `https://one-api.ir/divar/?token=331759:62d676f9937d93.42051387&action=post&id=${idpost}`
-      );
-      const { result } = await response.json();
-      setInfoHome((prevState) => {
-        return { ...prevState }, result;
-      });
-    } catch (e) {
-      toast.error("خطا از سمت سرور. لطفا صفحه را مجددا بارگذاری نمایید", {
-        position: toast.POSITION.TOP_CENTER,
-        theme: "colored",
-      });
-    }
+
+    const response = await fetch(
+      `https://one-api.ir/divar/?token=331759:62d676f9937d93.42051387&action=post&id=${idpost}`
+    );
+    const { result } = await response.json();
+
+    setInfoHome((prevState) => {
+      return { ...prevState }, result;
+    });
+
     setLoading(false);
+    console.log(result);
   };
 
   return (

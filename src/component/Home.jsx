@@ -5,6 +5,7 @@ import ContextProvider from "./context/ContextProvider";
 import HomeItem from "./HomeInfo";
 import Loading from "./Loading";
 import HomeListing from "./HomeListing";
+import Footer from "./Footer";
 
 const Home = () => {
   let [pageCount, setPageCount] = useState(1);
@@ -53,6 +54,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
