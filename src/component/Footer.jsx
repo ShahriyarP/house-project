@@ -1,8 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-center px-4 py-3 bg-one">
-      <section></section>
-      <section>copyrighting 2022 shahriar parhizkarnia</section>
+    <footer className="flex items-center justify-center px-4 py-8 bg-one">
+      <section className="text-white">
+        copyrighting 2022 shahriyar parhizkarnia
+      </section>
     </footer>
   );
 };

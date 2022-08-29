@@ -9,10 +9,11 @@ import Footer from "./Footer";
 
 const Home = () => {
   let [pageCount, setPageCount] = useState(1);
-  const { getData, home, loading, city, setCity } = useContext(ContextProvider);
+  const { getData, home, loading, city } = useContext(ContextProvider);
+  const q = " اپارتمان";
 
   useEffect(() => {
-    getData(city, pageCount);
+    getData(city, q, pageCount);
   }, [pageCount, city]);
 
   const nextPage = () => {

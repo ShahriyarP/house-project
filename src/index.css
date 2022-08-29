@@ -19,6 +19,10 @@ button {
   src: url("../src/asset/font/YekanBakh.ttf");
 }
 
+.Toastify div {
+  font-family: "yekanBakh";
+}
+
 .modal {
   min-width: min-content;
 }

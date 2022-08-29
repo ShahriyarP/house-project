@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const CategoryBanner = () => {
   return (
     <div className="px-4 py-4 mx-8 my-8 rounded-lg rounded-br-large bg-two md:mb-6">
@@ -10,7 +11,7 @@ const CategoryBanner = () => {
       <div className="grid grid-cols-1 p-6 2xl:mx-5 sm:grid-cols-2 justify-items-center">
         <Link
           className="grid items-center justify-center w-full mx-5 overflow-hidden"
-          to="home/rent"
+          to="category/rent"
         >
           <img
             className="flex items-center justify-center transition-all duration-700 ease-in-out cursor-pointer sm:p-4 rounded-3xl hover:scale-105 w-75vw sm:max-h-60"
@@ -24,7 +25,7 @@ const CategoryBanner = () => {
 
         <Link
           className="grid items-center justify-center w-full mx-5 overflow-hidden"
-          to="home/sell"
+          to="category/sell"
         >
           <img
             className="flex items-center justify-center transition-all duration-700 ease-in-out cursor-pointer sm:p-4 hover:scale-105 w-75vw rounded-3xl sm:max-h-60"
