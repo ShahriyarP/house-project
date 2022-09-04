@@ -1,6 +1,3 @@
-# Getting Started with Create React App
-
-
 
 Demo Project detail home:
 
